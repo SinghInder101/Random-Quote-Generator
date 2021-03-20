@@ -4,7 +4,9 @@ import axios from 'axios';
 import './App.css';
 const App = () => {
 
- const [advice,setAdvice] = useState('');
+ const [advice,setAdvice] = useState(''
+
+);
 
 
 
@@ -19,8 +21,8 @@ async function fetchAdvice () {
 
     const {data} = await axios.get('https://api.adviceslip.com/advice');
 
-   
-    console.log(data);
+    setAdvice(data.slip.advice);
+    console.log(advice);
 }
 
 
@@ -37,9 +39,14 @@ async function fetchAdvice () {
 
 
     return (
-        <div>
-            <h1>App</h1>
+        <div className="app">
+        <div className="card">
+          <h1 className="heading">{advice}</h1>
+          <button className="button" onClick={fetchAdvice}>
+            <span>GIVE ME ADVICE!</span>
+          </button>
         </div>
+      </div>
     );
 }
 
