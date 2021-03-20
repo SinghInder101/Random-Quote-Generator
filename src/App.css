@@ -63,8 +63,8 @@
   }
     
   .button:hover span {
-    animation: storm 0.7s ease-in-out both;
-    animation-delay: 0.05s;
+    animation: storm 0.6s ease-in-out both;
+    animation-delay: 0.06s;
   }
     
   @keyframes rotate {
